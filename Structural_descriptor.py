@@ -117,7 +117,7 @@ for filename in file_list:
         struct = dos_vrun.final_structure
     else:
         # if file is POSCAR format
-        P=Poscar.from_file(filename)
+        P=Poscar.from_file(filename,check_for_potcar=False)
         struct = P.structure
     #############################################################
     
@@ -305,3 +305,4 @@ list_errors=list(set(list_errors))
 for error in list_errors:
     print(error)
 ###############################################################################
+
