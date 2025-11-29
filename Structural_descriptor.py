@@ -198,7 +198,9 @@ for filename in file_list:
                 current_value=Bond_Valence(struct, label2site_index,atom1_str)
             #option: Band gap
             elif str_entry == 'Eg':
-                current_value=total_dos.get_gap()
+                #current_value=total_dos.get_gap()
+                bs = dos_vrun.get_band_structure()
+                current_value = bs.get_band_gap()
                 
             # the number of atoms in the lattice
             elif str_entry == 'natom':
@@ -305,4 +307,5 @@ list_errors=list(set(list_errors))
 for error in list_errors:
     print(error)
 ###############################################################################
+
 
