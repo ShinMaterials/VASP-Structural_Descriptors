@@ -56,6 +56,9 @@ import glob
 import numpy as np
 from numpy import sqrt
 import os
+import warnings
+from pymatgen.io.vasp.inputs import UnknownPotcarWarning
+warnings.filterwarnings("ignore", category=UnknownPotcarWarning)
 
 #start=timeit.default_timer()
 if len(sys.argv) ==1:
@@ -306,6 +309,7 @@ list_errors=list(set(list_errors))
 for error in list_errors:
     print(error)
 ###############################################################################
+
 
 
 
